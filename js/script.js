@@ -40,5 +40,5 @@ function initOnReady() {
 }
 
 window.addEventListener('makeChart', function () {
-  window.setTimeout(initOnReady, 1000)
+  window.setTimeout(() => initOnReady(), 100)
 })
