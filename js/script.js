@@ -19,7 +19,7 @@ function initOnReady(mode) {
     height: 560,
     symbol: sessionStorage.getItem('search_token')
       ? sessionStorage.getItem('search_token') + '-bsc'
-      : '0xd1587ee50e0333f0c4adcf261379a61b1486c5d2-bsc', // '0xd1587ee50e0333f0c4adcf261379a61b1486c5d2-bsc',
+      : '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82-bsc', // '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82-bsc',
     interval: '60',
     container_id: 'tv_chart_container',
 
