@@ -5,7 +5,7 @@ function getParameterByName(name) {
   return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '))
 }
 
-function initOnReady(mode) {
+function initOnReady() {
   var elem = document.getElementById('tv_chart_container')
   if (!elem) {
     console.log('there is no tv_chart_container')
@@ -16,10 +16,10 @@ function initOnReady(mode) {
   var widget = (window.tvWidget = new TradingView.widget({
     // debug: true, // uncomment this line to see Library errors and warnings in the console
     width: '100%',
-    height: 560,
+    height: 580,
     symbol: sessionStorage.getItem('search_token')
       ? sessionStorage.getItem('search_token') + '-bsc'
-      : '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82-bsc', // '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82-bsc',
+      : '0xd1587ee50e0333f0c4adcf261379a61b1486c5d2-bsc', // '0xd1587ee50e0333f0c4adcf261379a61b1486c5d2-bsc',
     interval: '60',
     container_id: 'tv_chart_container',
 
@@ -35,15 +35,10 @@ function initOnReady(mode) {
     client_id: 'tradingview.com',
     user_id: 'public_user_id',
     // theme: getParameterByName('theme'),
-    theme: mode,
-    // autosize: true,
+    theme: 'Dark',
   }))
 }
 
 window.addEventListener('makeChart', function () {
-  window.setTimeout(() => initOnReady('Dark'), 100)
-})
-
-window.addEventListener('makeChart_light_mode', function () {
-  window.setTimeout(() => initOnReady('Light'), 100)
+  window.setTimeout(() => initOnReady(), 100)
 })
